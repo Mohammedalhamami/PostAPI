@@ -1,0 +1,48 @@
+﻿### Project Task Outline
+
+**Objective:** Implement a web application with user authentication, basic authorization, and CRUD operations for posts using the repository design pattern, DTOs, and PostgreSQL.
+
+### Requirements
+
+1. **User Authentication:**
+   - Registration (Username, Email, Password)
+   - Login (Email, Password)
+   - Password hashing
+
+2. **Authorization:**
+   - Role-based: Admin, User
+   - Only Admins can delete posts
+
+3. **Posts CRUD Operations:**
+   - Create, Read, Update, Delete posts
+
+4. **Database:**
+   - PostgreSQL
+
+5. **Architecture:**
+   - Repository Pattern
+   - Data Transfer Objects (DTOs)
+
+
+### Endpoints Table
+
+| Endpoint             | Method | Description                | Authorization |
+|----------------------|--------|----------------------------|---------------|
+| `/api/auth/register` | POST   | Register a new user        | None          |
+| `/api/auth/login`    | POST   | Login a user               | None          |
+| `/api/posts`         | GET    | Get all posts              | User, Admin   |
+| `/api/posts/{id}`    | GET    | Get post by ID             | User, Admin   |
+| `/api/posts`         | POST   | Create a new post          | User, Admin   |
+| `/api/posts/{id}`    | PUT    | Update an existing post    | User, Admin   |
+| `/api/posts/{id}`    | DELETE | Delete a post              | Admin         |
+
+### Key Points
+
+- **Database Configuration:** Ensure correct PostgreSQL connection string.
+- **Entity Framework Core:** Create and apply migrations.
+- **Repository Pattern:** Abstract data access logic.
+- **DTOs and AutoMapper:** Transfer data and handle object mapping.
+- **Authentication and Authorization:** Implement JWT and role-based access control.
+- **CRUD Operations:** Implement basic CRUD operations for posts.
+- **Identity Framework:** Manage users and roles.
+- **Validation:** Make sure  that all inputs from the client are valid.
